@@ -11,7 +11,7 @@ import {
 } from "react-bootstrap";
 import { SiMongodb, SiExpress, SiReact, SiNodedotjs } from "react-icons/si";
 import "./App.css";
-import profileImg from "./assets/profile.jpg";
+import profileImg from "./assets/profile.JPG";
 const projects = [
   {
     title: "TODO List",
