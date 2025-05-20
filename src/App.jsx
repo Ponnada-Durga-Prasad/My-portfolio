@@ -17,14 +17,16 @@ const projects = [
   {
     title: "TODO List",
     description:
-      "Responsive web application using React and tailwindcss with modern UI/UX.",
+      "Responsive web application using React and Tailwind CSS with modern UI/UX.",
     sourceCode: "https://github.com/Ponnada-Durga-Prasad/TODO-App",
+    liveDemo: "https://comfy-kheer-1b40a0.netlify.app/",
   },
   {
     title: "Portfolio",
     description:
       "Portfolio application using React and Bootstrap with animations.",
     sourceCode: "https://github.com/Ponnada-Durga-Prasad/My-portfolio",
+    liveDemo: "https://durga-prasad-portfolio.netlify.app/",
   },
 ];
 
@@ -110,6 +112,14 @@ function App() {
                     <Card.Text>{project.description}</Card.Text>
                     <div className="mt-auto">
                       <a
+                        href={project.liveDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-success w-100 mb-2" // Live Demo button
+                      >
+                        Live Demo
+                      </a>
+                      <a
                         href={project.sourceCode}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -123,6 +133,7 @@ function App() {
               </Col>
             ))}
           </Row>
+
           {/* Social Links */}
           <div className="social-links d-flex justify-content-center mt-4 gap-4">
             <a
