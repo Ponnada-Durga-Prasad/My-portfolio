@@ -9,6 +9,7 @@ import {
   Form,
   Button,
 } from "react-bootstrap";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiReact, SiNodedotjs } from "react-icons/si";
 import "./App.css";
 import profileImg from "./assets/profile.JPG";
@@ -122,6 +123,27 @@ function App() {
               </Col>
             ))}
           </Row>
+          {/* Social Links */}
+          <div className="social-links d-flex justify-content-center mt-4 gap-4">
+            <a
+              href="https://github.com/Ponnada-Durga-Prasad"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon"
+              aria-label="GitHub"
+            >
+              <FaGithub size={36} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/durga-prasad-ponnada/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin size={36} color="#0A66C2" />
+            </a>
+          </div>
         </Container>
       </section>
 

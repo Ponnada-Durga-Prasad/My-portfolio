@@ -164,3 +164,15 @@ body {
   color: #0d6efd; /* Bootstrap primary color */
   text-decoration: none;
 }
+
+.social-icon {
+  color: #333;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover,
+.social-icon:focus {
+  color: #0d6efd; /* Bootstrap primary */
+  transform: scale(1.2);
+  text-decoration: none;
+}
