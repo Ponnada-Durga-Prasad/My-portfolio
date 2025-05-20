@@ -144,8 +144,8 @@ function App() {
                 beautiful user experiences with smooth animations.
               </p>
               <p>
-                When I'm not coding, I enjoy photography, traveling, and
-                learning about new web technologies.
+                When I'm not coding, I enjoy gardening, traveling, and learning
+                about new web technologies.
               </p>
             </Col>
           </Row>
