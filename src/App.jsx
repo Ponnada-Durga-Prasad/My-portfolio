@@ -269,7 +269,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiReact, SiNodedotjs } from "react-icons/si";
 import "./App.css";
 import profileImg from "./assets/profile.JPG";
-import resume from "./assets/Durga Prasad Ponnad_fs39_32115.pdf";
+import resume from "./assets/Durga Prasad Ponnada__fs39_32115.pdf";
 import React, { useEffect, useRef, useState } from "react";
 const projects = [
   {
