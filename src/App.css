@@ -1,82 +1,99 @@
-/* General body and anchor reset */
+/* Global Reset and Theme */
 body {
-  margin: 0;
-  padding-top: 70px; /* navbar height */
+  background-color: #000;
+  color: #fff;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fa;
-  scroll-behavior: smooth;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Navbar link customization */
+a,
 .nav-link-custom {
-  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease;
+}
+
+a:hover,
+.nav-link-custom:hover {
+  color: #0dcaf0;
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+/* Navbar */
+.navbar {
+  background-color: #000 !important;
+  transition: background-color 0.4s ease;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #fff !important;
   transition: color 0.3s ease;
 }
 
-.nav-link-custom:hover,
-.nav-link-custom:focus {
-  color: #0d6efd !important; /* Bootstrap primary color */
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+  color: #0dcaf0 !important;
+  transform: scale(1.1);
 }
 
 /* Hero Section */
 .hero-section {
-  min-height: 80vh;
-  background: linear-gradient(135deg, #4a90e2 0%, #50e3c2 100%);
-  color: white;
-  padding: 2rem 0;
-  animation: fadeIn 1s ease forwards;
+  padding: 100px 0;
+  background-color: #000;
+  text-align: center;
+  overflow: hidden;
 }
 
-.hero-section h1 {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+/* Hero Text Animation */
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
 }
 
-.hero-section p.lead {
-  font-size: 1.2rem;
-  max-width: 500px;
+.hero-text-animate {
+  animation: fadeSlide 5s infinite ease-in-out;
+  will-change: transform, opacity;
 }
 
-.hero-image {
-  max-width: 350px;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  animation: floatUp 1.5s ease forwards;
+/* Section Base */
+section {
+  padding: 80px 0;
+  background-color: #000;
+  transition: background-color 0.4s ease;
 }
 
-/* Portfolio Section */
-.portfolio-section {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-.portfolio-section h2 {
-  font-weight: 700;
-  color: #212529;
-}
-
+/* Card Styles */
 .card {
-  border: none;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #444;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+  will-change: transform, box-shadow;
+  cursor: pointer;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.3);
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 15px 25px rgba(13, 202, 240, 0.25);
 }
 
-/* About Section */
-.about-section h2 {
-  font-weight: 700;
-  color: #212529;
-}
-
+/* About Image */
 .about-photo {
-  width: 280px;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  border: 4px solid #fff;
+  animation: fadeInZoom 2s ease forwards;
   transition: transform 0.4s ease;
 }
 
@@ -85,94 +102,217 @@ body {
 }
 
 /* Contact Section */
-.contact-section h2 {
-  font-weight: 700;
-  color: #212529;
-}
-
-.btn-primary {
-  background-color: #0d6efd;
-  border: none;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: #084dd8;
+.contact-section {
+  text-align: center;
+  transition: color 0.3s ease;
 }
 
 /* Footer */
 .footer {
-  background-color: #212529;
-  color: white;
+  background-color: #000;
+  color: #ccc;
   font-size: 0.9rem;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  transition: color 0.3s ease;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Button Styles */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-@keyframes floatUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.btn-primary:hover {
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+  box-shadow: 0 0 15px #0dcaf0aa;
+  opacity: 1;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-image {
-    max-width: 90%;
-    margin-top: 2rem;
-  }
-  .about-photo {
-    width: 200px;
-    height: 200px;
-  }
+.btn-success {
+  background-color: #198754;
+  border-color: #198754;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.skills-section h2 {
-  font-weight: 700;
-  color: #212529;
+.btn-success:hover {
+  background-color: #17c964;
+  border-color: #17c964;
+  box-shadow: 0 0 15px #17c964aa;
+  opacity: 1;
 }
 
-.skill-icon a {
-  color: inherit;
-  transition: transform 0.3s ease, color 0.3s ease;
-  display: inline-block;
-}
-
-.skill-icon a:hover,
-.skill-icon a:focus {
-  transform: scale(1.2);
-  color: #0d6efd; /* Bootstrap primary color */
-  text-decoration: none;
-}
-
+/* Social Icons */
 .social-icon {
-  color: #333;
-  transition: color 0.3s ease, transform 0.3s ease;
+  color: #fff;
+  transition: color 0.4s ease, transform 0.4s ease;
+  cursor: pointer;
 }
 
-.social-icon:hover,
-.social-icon:focus {
-  color: #0d6efd; /* Bootstrap primary */
-  transform: scale(1.2);
-  text-decoration: none;
+.social-icon:hover {
+  color: #0dcaf0;
+  transform: scale(1.25) rotate(5deg);
+}
+
+/* Express Icon Specific Fix */
+.skill-icon svg[title="Express.js"] {
+  color: #fff !important;
+  fill: #fff !important;
+}
+
+/* Skill Icon Animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.skill-icon svg {
+  animation: float 3.5s ease-in-out infinite;
+  transition: transform 0.4s ease;
+  cursor: default;
+}
+
+.skill-icon svg:hover {
+  transform: scale(1.15) rotate(-5deg);
+  filter: drop-shadow(0 0 6px #0dcaf0);
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Zoom Fade Animation */
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animate Section Titles */
+.animate-text {
+  animation: fadeInUp 1s ease-in-out forwards;
+  will-change: transform, opacity;
+}
+
+/* Right side tech icons container */
+.hero-animation-col {
+  min-height: 300px;
+  justify-content: center;
+  gap: 30px;
+  color: #0dcaf0;
+}
+
+/* Tech Icons Styling */
+.tech-icons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 320px;
+  gap: 30px;
+}
+
+/* Floating animation for icons */
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.tech-icons svg {
+  animation: floatUpDown 4s ease-in-out infinite;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  cursor: default;
+}
+
+.tech-icons svg:hover {
+  transform: scale(1.25) rotate(10deg);
+  filter: drop-shadow(0 0 8px #0dcaf0);
+}
+
+/* Code typing box styling */
+.code-typing {
+  background-color: #111;
+  border: 1px solid #0dcaf0;
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 320px;
+  font-family: "Source Code Pro", monospace;
+  font-size: 14px;
+  color: #0dcaf0;
+  box-shadow: 0 0 20px #0dcaf0bb;
+  white-space: pre-wrap;
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.code-typing:hover {
+  box-shadow: 0 0 30px #0dcaf0ee;
+}
+
+/* Typing effect using CSS animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCaret {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #0dcaf0;
+  }
+}
+
+.code-typing {
+  overflow: hidden;
+  border-right: 3px solid #0dcaf0;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blinkCaret 0.75s step-end infinite;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
 }
