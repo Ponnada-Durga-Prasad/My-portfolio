@@ -270,7 +270,7 @@ import { SiMongodb, SiExpress, SiReact, SiNodedotjs } from "react-icons/si";
 import "./App.css";
 import profileImg from "./assets/profile.JPG";
 import resume from "./assets/Durga Prasad Ponnad_fs39_32115.pdf";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 const projects = [
   {
     title: "TODO List",
@@ -313,6 +313,13 @@ function App() {
     }, []);
     return ref;
   }
+  const [copied, setCopied] = useState(false);
+
+  const handleClick = () => {
+    navigator.clipboard.writeText("durgaprasadponnada06@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
   return (
     <>
       {/* Navbar */}
@@ -520,12 +527,18 @@ greet();`}
             <Col md={6} className="text-center">
               <div className="social-links d-flex justify-content-center gap-4">
                 <a
-                  href="durgaprasadponnada06@gmail.com"
+                  href="#"
                   className="social-icon"
                   aria-label="Email"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleClick();
+                  }}
+                  title={copied ? "Email copied!" : "Click to copy email"}
                 >
                   <FaEnvelope size={36} />
                 </a>
+
                 <a
                   href="https://www.linkedin.com/in/durga-prasad-ponnada/"
                   target="_blank"
